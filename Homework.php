@@ -8,6 +8,8 @@
 function setAsIs($name, $ebay_type){
     if($ebay_type != 'Default') {
         $name = 'AS IS ' . $name;
-    }
         return $name;
+    } else {
+        return $name;
+    }
 }
