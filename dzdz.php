@@ -7,12 +7,14 @@ $cars = array
     array('key_a' =>"Land Rover",'key_b' =>17,'key_c' =>15),
 );
 function sorter($key){
-    return function ($a, $b)
+    global $cars;
+    $sorter =  function ($a, $b)
     use ($key){
         return strnatcmp($a[$key],$b[$key]);
     };
-    usort ($cars, sorter('key_b'));
+    usort ($cars, $sorter);
     foreach ($cars as $item){
         echo $item['key_a'].','.$item['key_b'].','.$item['key_c'].\n;
     }
 };
+sorter("key_a");
